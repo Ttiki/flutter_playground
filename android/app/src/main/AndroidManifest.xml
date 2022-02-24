@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jostatu.google_flutter_codelab">
    <application
-        android:label="google_flutter_codelab"
+        android:label="Google Flutter - Codelab 1"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
