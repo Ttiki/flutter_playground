@@ -25,16 +25,10 @@ class Test extends StatelessWidget {
         //centerTitle: true, //commented because I don't want my text to be centered
       ),
       body: Center(
-        child: Text(
-            "Hello world!",
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2.0,
-              color: Colors.blueAccent,
-              fontFamily: "Din1451",
-            )
-        ),
+        child: Image.asset('assets/img3.jpg'),
+          //image: NetworkImage('https://images.unsplash.com/photo-1624460930531-160397dd7591?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700&q=60'),
+          //image: AssetImage('assets/img1.jpg'),
+       // )
       ),
       floatingActionButton: FloatingActionButton(
         child: Text("Click"),
