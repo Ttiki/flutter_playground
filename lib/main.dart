@@ -25,13 +25,21 @@ class Test extends StatelessWidget {
         //centerTitle: true, //commented because I don't want my text to be centered
       ),
       body: Center(
-        child: Image.asset('assets/img3.jpg'),
-          //image: NetworkImage('https://images.unsplash.com/photo-1624460930531-160397dd7591?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=700&q=60'),
-          //image: AssetImage('assets/img1.jpg'),
-       // )
+        child: IconButton(
+          onPressed: (){
+            print("@ clicked!");
+          },
+          icon: Icon(Icons.alternate_email),
+          color: Colors.blueAccent,
+        )
       ),
       floatingActionButton: FloatingActionButton(
-        child: Text("Click"),
+        child: IconButton(
+          onPressed: (){},
+          icon: Icon(Icons.add),
+          color: Colors.blueAccent,
+          iconSize: 32,
+        ),
         backgroundColor: Colors.amberAccent,
         //Actions
         onPressed: (){},
