@@ -24,19 +24,29 @@ class Test extends StatelessWidget {
         //This attrbut forces child widgets of AppBar to be centered relative to their parent widget (here AppBar.)
         //centerTitle: true, //commented because I don't want my text to be centered
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [ //List of Wdigets -> this is a list
-          Text("Hello world!"),
-          ElevatedButton(
-              onPressed: (){},
-              child: Text("Click me"),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("Hello world"),
+              ElevatedButton(onPressed: (){}, child: Text("Click me")),
+              Container(
+                padding: EdgeInsets.all(20),
+                color: Colors.amberAccent,
+                child: Text("Another label!"),
+              ),
+            ],
           ),
+          Text("Hello world"),
+          ElevatedButton(onPressed: (){}, child: Text("Click me")),
           Container(
+            padding: EdgeInsets.all(20),
             color: Colors.amberAccent,
-            padding: EdgeInsets.all(5),
-            child: Text("Another hello world!")
+            child: Text("Another label!"),
           )
         ],
       ),
