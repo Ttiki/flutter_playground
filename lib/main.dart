@@ -24,30 +24,37 @@ class Test extends StatelessWidget {
         //This attrbut forces child widgets of AppBar to be centered relative to their parent widget (here AppBar.)
         //centerTitle: true, //commented because I don't want my text to be centered
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: Row(
+
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text("Hello world"),
-              ElevatedButton(onPressed: (){}, child: Text("Click me")),
-              Container(
-                padding: EdgeInsets.all(20),
-                color: Colors.amberAccent,
-                child: Text("Another label!"),
-              ),
-            ],
+          Expanded(
+              flex: 3,
+              child: Image.asset("assets/img1.jpg")
           ),
-          Text("Hello world"),
-          ElevatedButton(onPressed: (){}, child: Text("Click me")),
-          Container(
-            padding: EdgeInsets.all(20),
-            color: Colors.amberAccent,
-            child: Text("Another label!"),
-          )
+          Expanded(
+            flex: 1,
+            child: Container(
+                padding: EdgeInsets.all(30),
+                color: Colors.amberAccent,
+                child: Text('1'),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(30),
+              color: Colors.cyan,
+              child: Text('2'),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              padding: EdgeInsets.all(30),
+              color: Colors.pink,
+              child: Text('3'),
+            ),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
