@@ -20,7 +20,6 @@ class _QuoteListState extends State<QuoteList> {
   Quote("If you change the way you look at things, the things you look at change.", "Unknown"),
   Quote("When she was once asked, ‘Do you pray?’ she responded, ‘I pray every second of my life; not on my knees but with my work. My prayer is to lift women to equality with men. Work and worship are one with me.’",
   "Unknown"),
-    Quote("Yolo", "Swagg")//Vive les années 2010!
   ];
 
   @override
@@ -37,7 +36,13 @@ class _QuoteListState extends State<QuoteList> {
 
         //Inline function to "map" (read) through our list above (map). Foreach quote inside our quots list, we call
         //this inline function which return a simple Text widget, which we transform to a list with the method .toList()
-        children: quotes.map((quote) => QuoteCard(quote)).toList(),
+        children: quotes.map((quote) => QuoteCard(
+            quote,
+            (){
+              setState(() {
+                quotes.remove(quote);
+              });
+            })).toList(),
       ),
     );
   }
