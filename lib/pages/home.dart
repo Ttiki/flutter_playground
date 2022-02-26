@@ -6,7 +6,7 @@ class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
-//TODO this is another test for the master branch!
+
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
