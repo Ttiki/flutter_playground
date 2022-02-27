@@ -10,7 +10,7 @@ class WorldTime{
   String url=""; //url to API's endpoint (example: /api/timezone/Europe/Paris)
   bool isDayTime=false; //True or false if day time or not
 
-  WorldTime(this.loc, this.flag, this.url); //Our constructor
+  WorldTime(this.url, this.loc, this.flag); //Our constructor
 
   Future<void> getTime() async {
 
