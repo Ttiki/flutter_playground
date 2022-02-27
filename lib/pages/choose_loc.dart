@@ -9,7 +9,6 @@ class ChooseLoc extends StatefulWidget {
 }
 
 class _ChooseLocState extends State<ChooseLoc> {
-
   List<WorldTime> locations = [
     WorldTime('api/timezone/Europe/London', 'London', 'uk.png'),
     WorldTime('api/timezone/Europe/Berlin', 'Athens', 'greece.png'),
@@ -21,8 +20,9 @@ class _ChooseLocState extends State<ChooseLoc> {
     WorldTime('api/timezone/Asia/Jakarta', 'Jakarta', 'indonesia.png'),
   ];
 
-  void updateTime(index) async{
-    WorldTime instance = locations[index]; //Gets the country of the tapped country from the list
+  void updateTime(index) async {
+    WorldTime instance =
+        locations[index]; //Gets the country of the tapped country from the list
     await instance.getTime(); //We get the time for the country
     //Navigate back to the home screen
     //And pass the new data to the home screen
@@ -50,18 +50,19 @@ class _ChooseLocState extends State<ChooseLoc> {
       ),
       body: ListView.builder(
         itemCount: locations.length,
-        itemBuilder: (context, index){
+        itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 4),
             child: Card(
               child: ListTile(
-                onTap: (){
+                onTap: () {
                   print(locations[index].loc);
                   updateTime(index);
                 },
                 title: Text(locations[index].loc),
                 leading: CircleAvatar(
-                  backgroundImage: AssetImage('assets/flags/${locations[index].flag}'),
+                  backgroundImage:
+                      AssetImage('assets/flags/${locations[index].flag}'),
                 ),
               ),
             ),
