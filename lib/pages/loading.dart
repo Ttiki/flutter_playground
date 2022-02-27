@@ -24,6 +24,7 @@ class _LoadingState extends State<Loading> {
       'location': instance.loc,
       'flag': instance.flag,
       'time': instance.time,
+      'isDayTime': instance.isDayTime,
     }); //We do not want to just push, we want to replace (-> save memory by clearing the stack)
     // setState(() {
     //   time = instance.time;

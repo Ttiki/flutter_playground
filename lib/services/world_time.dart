@@ -8,6 +8,7 @@ class WorldTime{
   String time=""; //The time in the location
   String flag=""; //url to put the asset flag icon
   String url=""; //url to API's endpoint (example: /api/timezone/Europe/Paris)
+  bool isDayTime=false; //True or false if day time or not
 
   WorldTime(this.loc, this.flag, this.url); //Our constructor
 
@@ -31,7 +32,10 @@ class WorldTime{
       print(now);
 
       //We store the data from the API into the class
+      //Ternary operator to test if day or not
+      isDayTime = now.hour > 6 && now.hour < 20 ? true : false;
       time = DateFormat.jm().format(now);
+
     }catch(e){
       print('Caught error : $e');
       time = 'Could not get time data';
