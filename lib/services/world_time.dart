@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart';
+import 'package:intl/intl.dart';
 import 'dart:convert';
 
 class WorldTime{
@@ -30,7 +31,7 @@ class WorldTime{
       print(now);
 
       //We store the data from the API into the class
-      time = now.toString();
+      time = DateFormat.jm().format(now);
     }catch(e){
       print('Caught error : $e');
       time = 'Could not get time data';
