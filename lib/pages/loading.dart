@@ -11,15 +11,22 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
 
-  String time = "Loading...";
+  // String time = "Loading...";
 
   void setupWorldTime() async{
-    WorldTime instance = WorldTime('Berlin', 'germany.png', 'api/timezone/Europe/Berlin');
+    WorldTime instance = WorldTime('Berlin', 'germany.png', 'api/timezone/Europe/Paris');
     await instance.getTime();
     print(instance.time);
-    setState(() {
-      time = instance.time;
-    });
+    Navigator.pushReplacementNamed(context, '/home', arguments: {
+      //We pass this var to the next view
+      //We need to do that to use our newly made data to the other view.
+      'location': instance.loc,
+      'flag': instance.flag,
+      'time': instance.time,
+    }); //We do not want to just push, we want to replace (-> save memory by clearing the stack)
+    // setState(() {
+    //   time = instance.time;
+    // });
   }
 
   @override
@@ -33,7 +40,7 @@ class _LoadingState extends State<Loading> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(50.0),
-        child: Text(time),
+        child: Text("Loading"),
       ),
     );
   }
